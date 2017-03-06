@@ -4,24 +4,41 @@
     <name>Custom password hash</name>
     <description/>
     <modelVersion>4.0.0</modelVersion>
+    <version>0.1</version>
+    <groupId>org.keycloak</groupId>
 
     <artifactId>password-hash-example</artifactId>
     <packaging>jar</packaging>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:pavelbogomolenko/keycloak-custom-password-hash.git</connection>
+        <developerConnection>scm:git:git@github.com:pavelbogomolenko/keycloak-custom-password-hash.git</developerConnection>
+        <url>https://github.com/pavelbogomolenko/keycloak-custom-password-hash</url>
+    </scm>
 
     <dependencies>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
+            <version>2.5.4.Final</version>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-server-spi</artifactId>
-            <scope>provided</scope>
+            <version>2.5.4.Final</version>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-server-spi-private</artifactId>
-            <scope>provided</scope>
+            <version>2.5.4.Final</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
@@ -31,11 +48,23 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+
         <finalName>password-hash-example</finalName>
     </build>
 </project>
